@@ -154,7 +154,7 @@ pub fn known_folder(folder_id: windows::core::GUID) -> Option<PathBuf> {
         let result = Shell::SHGetKnownFolderPath(
             &folder_id,
             0,
-            Win32::Foundation::HANDLE::default(),
+            0 as Win32::Foundation::HANDLE,
             &mut path_ptr
         );
         if result == 0 {
